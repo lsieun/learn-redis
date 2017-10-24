@@ -88,19 +88,39 @@ redis的配置
 ### 3.2 第二种安装方式 ###
 
 
+进入到src目录下
 
-4. 进入到src下进行安装make install验证 （II查看src）
-5. 建立两个文件夹存放redis命令和配置文件 mkdir -p /usr/local/redis/{bin,etc}
+![](images/redis_src_directory.png)
 
+使用`make install`进行安装验证
+
+	make install
+
+![](images/redis_make_install_2.png)
+
+
+查看src目录下，有redis-cli和redis-server即可。
+
+建立两个目录存放redis命令和配置文件 
+
+	mkdir -p /usr/local/share/redis/{bin,etc}
 	cd /usr/local/share/redis/
 	ls
 
+![](images/mkdir_two_directory.png)
 
-6. 把redis-3.0.0下的redis.conf移动到/usr/local/redis/etc下 cp redis.conf /usr/local/redis/etc/
+把redis-3.x.x下的redis.conf移动到/usr/local/share/redis/etc下 
 
 	cp /usr/local/redis-3.0.0/redis.conf /usr/local/share/redis/etc/
 
-7. 把redis-3.0.0/src下的mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server 文件移动到bin目录下： mv mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server /usr/local/redis/bin/
+![](images/redis_copy_conf.png)
+
+
+把redis-3.0.0/src下的mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server 文件移动到bin目录下： 
+
+	mv mkreleasehdr.sh redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server /usr/local/share/redis/bin/
+
+![](images/redis_copy_bin.png)
 
 ## 4. 启动redis ##
 
