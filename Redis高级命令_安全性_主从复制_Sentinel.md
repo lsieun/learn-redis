@@ -95,9 +95,9 @@ vi编辑redis.conf文件，找到下面进行保存修改
 1. copy文件sentinel.conf到/usr/local/redis/etc/中
 2. 修改sentinel.conf文件
 
-	#sentinel monitor 名称 IP 端口 投票选举次数
+	sentinel monitor 名称 IP 端口 投票选举次数
 	sentinel monitor <master_name> <ip> <port> <n>
-	#默认1秒检查一次，这里配置超时5000毫秒为宕机
+	默认1秒检查一次，这里配置超时5000毫秒为宕机
 	sentinel down-after-milliseconds <master_name> 5000
 	sentinel failover-timeout <master_name> 900000
 	sentinel parallel-syncs <master_name> 2
